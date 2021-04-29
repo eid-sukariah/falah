@@ -1,0 +1,407 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'cairo-bold';
+    outline: none;
+}
+body{
+    direction: rtl;
+    scroll-behavior: smooth;
+}
+ul li {
+    list-style: none;
+}
+::-webkit-scrollbar{
+    width: 0;
+}
+.container{
+    max-width: 1500;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 15px;
+}
+section{
+    padding: 70px 0;
+}
+section h3{
+    font-size: 30px;
+    text-align: center;
+    color: rgb(30, 255, 0);
+    margin-bottom: 30px;
+    position: relative; 
+}
+section h3::after,
+section h3::before{
+    content: "";
+    position: absolute;
+    background-color: rgb(30, 255, 0);
+    height: 1.5px;
+    left: 50%;
+    transform: translateX(-50px);
+}
+section h3::after{
+    width: 50px;
+    bottom: -10px;
+}
+section h3::before{
+    width: 100px;
+    bottom: -10px;
+}
+
+/* header */
+
+.header{
+    /* background-color: rgba(0, 0, 0, 0.3); */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    transition: .5s all ease-in-out;
+}
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    color: black;
+    transition: .5s all ease-in-out;
+}
+.header.active{
+    background-color: rgba(0, 0, 0, .6);
+    /* border-bottom: #232323 2px; */
+}
+.header.active .container{
+    height: 80px;
+}
+.header ul {
+    display: flex;
+}
+.header ul li{
+    position: relative;
+    cursor: pointer;
+}
+.header ul li::after{
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    height: 2px;
+    background-color: black;
+    transition: .3s all ease-in-out;
+    width: 0;
+}
+.header ul li:hover::after,
+.header ul li .active::after{
+    width: 100%;
+}
+.header .bars{
+    display: none;
+}
+.header li:not(:first-of-type),
+.header li :not(:last-of-type){
+    margin: 0 15px;
+}
+.header .logo{
+    font-family: 'aref-ruqaa';    
+    font-size: 50px;
+    cursor: pointer;
+}
+
+/* main */
+
+.main{
+    background: url(/musq.jpg) center center/cover no-repeat;
+}
+.main .container{
+    min-height: 100vh;
+}
+.main .title{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.main .title h2{
+    line-height: 1.9;
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+.title .btn{
+    border: 2px solid black;
+    background: transparent;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: .5s all ease-in-out;
+    padding: 5px 15px;
+}
+.title .btn i{
+    font-size: 30px;
+    margin-right: 15px;
+}
+.title .btn::after{
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    transition: .3s all ease-in-out;
+    background-color: blanchedalmond;
+    z-index: -1;
+}
+.title .btn:hover{
+    color: blue;
+}
+.title .btn:hover::after{
+    width: 100%;
+}
+
+/* hadeth section */
+.hadethContainer{
+    min-height: 400px;
+    position: relative;
+    box-shadow: 4px 4px 4px 0 darkgray inset,
+    -4px -4px 4px 0 darkgray inset;
+    color: #232323;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    /* padding-top: 70px; */
+}
+.hadethContainer .number{
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px 20px;
+    color: rgb(30, 255, 0);
+    background: transparent;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3) inset,
+    0 .7px 10px -5px rgba(76, 175, 88, 0.4) inset;
+}
+.hadeth .buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    /* padding: 0 20px; */
+}
+.hadeth .buttons div{
+    background: linear-gradient(60deg #66bb6a #43a047);
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3) inset,
+    0 .7px 10px -5px rgba(76, 175, 88, 0.4) inset;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* lecture section */
+
+.lecture-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.lecture-container .right,
+.lecture-container .left{
+    width: 48%;
+}
+/* right */
+.lecture-container .right .lec{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .4);
+    padding: 20px;
+    transition: .5s all ease-in-out;
+}
+.lecture-container .right .lec:hover{
+    transform: scale(.95);
+}
+.lec .lec-text{
+    width: calc(100% - 150px);
+    color: #232323;
+}
+.lec img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: auto;
+}
+.lec-text h4{
+    font-size: 20px;
+}
+.lec-text p{
+    font-size: 16px;
+}
+/* left */
+.left{
+    position: sticky;
+    top: 0;
+}
+.lecture-container .left iframe{
+    width: 100%;
+    height: 400px;
+}
+
+/* quran section */
+
+.surhesContainer{
+    display: flex;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
+}
+.surhesContainer .surah{
+    min-width: 160px;
+    min-height: 100px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .4);
+    /* margin-bottom: 6px; */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    margin: 5px auto;
+}
+.surhesContainer .surah:hover{
+    transform: scale(1.08);
+}
+
+/* pop up section */
+.surah-popup{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background-color: #bbcfdf8a;
+    overflow-y: scroll; 
+    transform: translateX(100%);
+}
+.surah-popup .active{
+    transform: translateX(0);
+    transition: .5s ease-in-out transform;
+}
+.surah-popup::-webkit-scrollbar{
+    width: 15px;
+    background-color: #ffff;
+}
+.surah-popup::-webkit-scrollbar-thumb{
+    background-color: #0b9412;
+}
+.close-popup{
+    position: sticky;
+    top: 5px;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+.surah-popup .ayat{
+    padding: 20px;
+    width: 100%;
+    margin-top: 20px;
+    margin-right: 40px;
+    /* margin-left: 40px; */
+    text-align: center;
+}
+.surah-popup .ayat p{
+    line-height: 1.6;
+    width: 100%;
+    border-bottom: 1px solid green;
+}
+
+/* pray Time */
+.pray .cards{
+    display: flex;
+    flex-wrap: wrap;
+}
+.cards .card{
+    width: 250px;
+    min-width: 320;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .6);
+    padding: 30px 20px;
+    margin: 20px auto;
+}
+.cards .circle{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circle svg{
+    width: 210px;
+    height: 210px;
+}
+.circle svg circle{
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke-width: 10;
+    stroke: #0b9412;
+    transform: translate(5px, 5px);
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 6s linear infinite alternate ;
+
+}
+@keyframes dash {
+    from {
+      stroke-dashoffset: 1000;
+    }
+    to {
+      stroke-dashoffset: 10;
+    }
+  }
+  .circle .prayTime{
+      position: absolute;
+      font-size: 40px;
+      color: #0b9412;
+  }
+  .pray p{
+      color: #0b9412;
+      font-size: 25px;
+      margin-top: 10px;
+      text-align: center;
+      font-weight: bold;
+      /* box-shadow: 0 0 5px rgba(0, 0, 0, .6);
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto; */
+  }
+
+  /* footer section */
+  .footer{
+      padding: 0;
+  }
+  .footer .social{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #0b9412;
+  }
+  .footer .social a{
+      margin: 15px;
+      font-size: 30px;
+      color: #ffff;
+  }
+  .footer svg{
+      fill: #0b9412;
+      transform: translateY(10px);
+  }

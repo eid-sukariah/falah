@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%surah.forEach(elem =>{ %>
+        
+        <p><%= elem.name%></p>
+        <p><%= elem.englishName%></p>
+        <p><%= elem.revelationType%></p>
+        <p><%= elem.numberOfAyahs%></p>
+
+            
+        <%})%>
+
+
+
+        <%times.forEach(elem =>{ %>
+            <div class="card">
+                <div class="circle">
+                    <svg>
+                        <circle cx="100" cy="100" r="100"></circle>
+                    </svg>
+                    <div class="prayTime"><%= elem.timings%></div>
+                </div>
+                <p>fsdfd</p>
+            </div>
+            <%})%>
+</body>
+</html>

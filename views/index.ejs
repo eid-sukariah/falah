@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('layout/head')%>
+<body>
+    <%- include('layout/header')%>
+    <section class="main">
+        <div class="container">
+            <div class="title">
+                <h2>
+                    مرحبا بك في
+                    <br>
+                    موقع الإحسان الإسلامي
+                </h2>
+                <button class="btn">
+                     ابدأ  التصفح
+                    <i class="fas fa-caret-left"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- hadeth section -->
+    <section class="hadeth">
+        <h3>الأحاديث</h3>
+        <div class="conttener">
+            <div class="hadethContainer">
+
+                <div class="number"><%= hadith.number%></div>
+                <p><%= hadith.arab%></p>
+  
+            </div>
+            <div class="buttons">
+                <div><p class="prev">السابق</p></div>
+                <div><p class="next">التالي</p></div>
+            </div>
+
+        </div>
+    </section>
+    <!-- lacture section  -->
+    <section class="lecture">
+        <h3>محاضرات</h3>
+        <div class="container">
+            <div class="lecture-container">
+                <div class="right">
+                    <div class="lec">
+                        <div class="lec-text">
+                            <h4>الشيخ : سعيد الكملي</h4>
+                            <p>
+                      لاتعتمد على احد...درس تدمع له القلوب ـ الشيخ سعيد الكملي</p>
+                        </div>
+                        <img src="/kammli.jpg" alt="">
+                    </div>
+                    <div class="lec">
+                        <div class="lec-text">
+                            <h4>الشيخ: محمد راتب النابلسي</h4>
+                            <p>غير حياتك الشيخ محمد راتب النابلسي</p>
+                        </div>
+                        <img src="/النابلسي.jpg" alt="">
+                    </div>
+                    <div class="lec">
+                        <div class="lec-text">
+                            <h4>الشيخ : الشعراوي</h4>
+                            <p>
+                                "الفرق بين الشيطان والنفس الأمارة بالسوء"</p>
+                        </div>
+                        <img src="/الشعراوي.jpg" alt="">
+                    </div>
+                    <div class="lec">
+                        <div class="lec-text">
+                            <h4>الشيخ : الحويني</h4>
+                            <p> محاضرة "حياة القلب" للشيخ أبوإسحاق الحويني</p>
+                        </div>
+                        <img src="/الحويني.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="left">
+                   <iframe src="https://www.youtube.com/embed/X4WXi3ktgn0" frameborder="0"></iframe>
+                   <p>فقيه الأمَّــــــة ابن مَسعُود…!  </p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- Quran section -->
+    <section class="quran">
+        <h3>القران الكريم</h3>
+        <div class="container">
+            <div class="surhesContainer">
+                
+                <%surah.forEach(elem =>{ %>
+                <div class="surah">
+                        <p><%= elem.name%></p>
+                        <p><%= elem.englishName%></p>
+                        <p><%= elem.revelationType%></p>
+                        <p><%= elem.numberOfAyahs%></p>    
+                    </div>
+                <%})%>
+
+            </div>
+        </div>
+    </section>
+    <!-- pop up section -->
+    <div class="surah-popup">
+        <div class="close-popup">
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="ayat">
+            <p></p>
+        </div>
+    </div>
+
+    <!-- pray time section -->
+    <section class="pray">
+        <h3>أوقات الصلاة</h3>
+        <!-- <select name="" id="">
+            <option value="">Amman</option>
+            <option value="">Zarqa</option>
+            <option value="">Irbid</option>
+            <option value="">Mafraq</option>
+            <option value="">Jerash</option>
+            <option value="">Ajloun</option>
+            <option value="">Karak</option>
+            <option value="">Aqaba</option>
+            <option value="">Ma'an</option>
+            <option value="">Tafila</option>
+            <option value="">Madaba</option>
+            
+        </select> -->
+        <p id="timeNow"></p>
+        <div class="container">
+            <div class="cards">
+                <% for (const key in times.timings){ %> 
+                
+                <div class="card">
+                    <div class="circle">
+                        <svg>
+                            <circle cx="100" cy="100" r="100"></circle>
+                        </svg>
+                        <div class="prayTime">
+                            <p><%= key%></p>
+                            <p><%= times.timings[key]%></p>
+                        </div>
+                    </div>
+                </div>
+                <%}%>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer section -->
+    <section class="footer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0b9412" fill-opacity="1" d="M0,96L80,112C160,128,320,160,480,160C640,160,800,128,960,144C1120,160,1280,224,1360,256L1440,288L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
+        <div class="social">
+            <a href="https://web.facebook.com/eid.sukariah"><i class="fab fa-facebook"></i></a>
+            <a href="https://github.com/eid-sukariah"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/eid-sukariah-27339219a/"><i class="fab fa-linkedin"></i></a>
+            <a href=""><i class="fab fa-instagram"></i></a>
+        </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="app.js">
+       
+    </script>
+</body>
+</html>
