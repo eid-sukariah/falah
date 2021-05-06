@@ -17,7 +17,7 @@ app.use(express.static('./public/js'));
 app.set('view engine', 'ejs');
 
 
-app.get('/home', renderHome);
+app.get('/', renderHome);
 app.get('/hadeth', getHadethAPI);
 // app.get('/surah', getsurah)
 
@@ -25,9 +25,9 @@ function renderHome(req, res){
     res.render('index');
 }
 
-// console.log('regreg');
 const hadithIndex = 0;
 function getHadethAPI(req, res){
+    // console.log('regreg');
     const hadithUrl = `https://api.hadith.sutanlab.id/books/muslim?range=1-300`;
     const alquranUrl = `http://api.alquran.cloud/v1/meta`;
     const timePrayUrl = `http://api.aladhan.com/v1/timingsByCity?city=amman&country=jorden&method=4`;
