@@ -25,7 +25,7 @@ function renderHome(req, res){
     res.render('index');
 }
 
-const hadithIndex = 0;
+const hadithIndex = 55;
 function getHadethAPI(req, res){
     // console.log('regreg');
     const hadithUrl = `https://api.hadith.sutanlab.id/books/muslim?range=1-300`;

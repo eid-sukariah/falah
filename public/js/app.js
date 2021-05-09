@@ -4,13 +4,15 @@ $(function() {
     // alert( 'ready!' );
     
     $('.next').on('click', function() {
-        // alert('next');
+        alert('next');
         hadithIndex == 299 ? hadithIndex = 0 : hadithIndex++ ;
+ 
     });
     
     $('.prev').on('click', function() {
-        // alert('prev');    
+        alert('prev');    
         hadithIndex == 0 ? hadithIndex = 299 : hadithIndex-- ;
+
     });
 
     // display the date
@@ -19,19 +21,19 @@ $(function() {
     document.getElementById("timeNow").innerHTML =`Today Date : ${d.getFullYear()}-${months[d.getMonth()]}-${d.getDate()}`
 // -------------------------------------------
 
-    const section = $('section');
-    const links = [$('header ul li')];
+//     const sections = $('section');
+//     const links = [$('header ul li')];
 // console.log(links);
-links.forEach(link => {
-    console.log(link);
-    link.on('click', function(){
-        $('.header ul li.active').removeClass('active');
-        link.addClass('active');
-        const target = link.dataset.filter;
-        console.log(target);
-    })
+//     links.forEach(link => {
+//     console.log(link);
+//     link.on('click', function(){
+//         $('.header ul li.active').removeClass('active');
+//         link.addClass('active');
+//         const target = link.dataset.filter;
+//         console.log(target);
+//     });
 
-})
+// })
 });
 
 // links for nav bar
@@ -44,7 +46,7 @@ links.forEach(link => {
 //         document.g('.header ul li.active').classList.remove('active');
         // link.classList.add('active');
         // const target = link.dataset.filter;
-        // // console.log(target);
+        // console.log(target);
         // sections.forEach(section => {
         //     if (section.classList.contains(target)){
         //         section.scrollIntoView()

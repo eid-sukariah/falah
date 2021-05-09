@@ -53,7 +53,7 @@ section h3::before{
 /* header */
 
 .header{
-    /* background-color: rgba(0, 0, 0, 0.3); */
+    background-color: white;
     position: fixed;
     top: 0;
     left: 0;
@@ -82,6 +82,10 @@ section h3::before{
 .header ul li{
     position: relative;
     cursor: pointer;
+}
+.header ul li a{
+    text-decoration: none;
+    color: #0b9412;
 }
 .header ul li::after{
     content: "";
@@ -176,12 +180,13 @@ section h3::before{
     padding: 50px 20px;
     /* padding-top: 70px; */
 }
-.hadethContainer .number{
-    position: absolute;
+.buttons .number{
+    /* position: absolute;
     left: 0;
-    top: 0;
-    padding: 10px 20px;
-    color: rgb(30, 255, 0);
+    top: 0; */
+    /* padding: 10px 20px; */
+    border-radius: 50%;
+    /* color: rgb(30, 255, 0); */
     background: transparent;
     box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3) inset,
     0 .7px 10px -5px rgba(76, 175, 88, 0.4) inset;
