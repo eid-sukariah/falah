@@ -108,10 +108,13 @@ section h3::before{
 .header li :not(:last-of-type){
     margin: 0 15px;
 }
-.header .logo{
+.header .logo {
     font-family: 'aref-ruqaa';    
     font-size: 50px;
     cursor: pointer;
+    background: -webkit-linear-gradient( rgb(21, 102, 7) , rgba(125,255,0,1) );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* main */
